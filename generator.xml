@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动包位置 -->
+    <classPathEntry location="D:\gradle\gradle-4.0\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.40\ef2a2ceab1735eaaae0b5d1cccf574fb7c6e1c52\mysql-connector-java-5.1.40.jar" />    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/addressbook" userId="root" password="123456">  <!-- 2 -->
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 --> <!-- 3 -->
+        <javaModelGenerator targetPackage="com.dao.bean" targetProject=".">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 生成的映射文件包名和位置 --> <!-- 4 -->
+        <sqlMapGenerator targetPackage="com.dao.xml" targetProject=".">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置 --> <!-- 5 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dao.mapper" targetProject=".">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 要生成那些表(更改tableName和domainObjectName就可以) --><!-- 6 -->
+        <table tableName="mytable" domainObjectName="Mytable" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    </context>
+</generatorConfiguration>
